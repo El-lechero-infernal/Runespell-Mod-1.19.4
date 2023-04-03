@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "runespellmod",
+	"version": "${version}",
+	"name": "RuneSpellMod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"KiiNGz88"
+	],
+	"license": "MIT",
+	"icon": "assets/runespellmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.kiingz.runespellmod.RunespellMod"
+		],
+		"client": [
+			"net.kiingz.runespellmod.RunespellModClient"
+		],
+		"fabric-datagen": [
+			"net.kiingz.runespellmod.RunespellModDataGenerator"
+		]
+	},
+	"mixins": [
+		"runespellmod.mixins.json",
+		{
+			"config": "runespellmod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
